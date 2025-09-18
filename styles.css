@@ -174,6 +174,13 @@ main {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 20px;
+  text-shadow: 
+    0 0 10px rgba(255, 0, 150, 0.5),
+    0 0 20px rgba(0, 255, 255, 0.5),
+    0 0 30px rgba(255, 255, 0, 0.5),
+    0 0 40px rgba(0, 255, 0, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .skills-subtitle {
@@ -404,6 +411,9 @@ main {
   font-weight: 700;
   color: #ffffff;
   margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(16, 185, 129, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
 .portfolio-subtitle {
@@ -434,12 +444,12 @@ main {
 
 .portfolio-item:hover {
   transform: translateY(-10px) scale(1.02);
-  border-color: rgba(96, 165, 250, 0.8);
+  border-color: rgba(16, 185, 129, 0.8);
   box-shadow: 
-    0 20px 40px rgba(96, 165, 250, 0.3),
-    0 0 30px rgba(96, 165, 250, 0.4),
-    inset 0 0 20px rgba(96, 165, 250, 0.1);
-  background: rgba(96, 165, 250, 0.1);
+    0 20px 40px rgba(16, 185, 129, 0.3),
+    0 0 30px rgba(16, 185, 129, 0.4),
+    inset 0 0 20px rgba(16, 185, 129, 0.1);
+  background: rgba(16, 185, 129, 0.1);
   cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="%2310b981" stroke-width="2"/><circle cx="10" cy="10" r="2" fill="%2310b981"/><circle cx="10" cy="10" r="0.5" fill="%23ffffff"/></svg>'), pointer;
 }
 
@@ -523,6 +533,145 @@ main {
   font-size: 1rem;
   color: #d1d5db;
   line-height: 1.6;
+}
+
+.education-experience-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.education-experience-section .container {
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+.education-experience-section .section-title {
+  font-size: 4rem;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 0 0 20px rgba(96, 165, 250, 0.5);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.education-experience-section .section-subtitle {
+  font-size: 1.2rem;
+  color: #d1d5db;
+  margin-bottom: 50px;
+  opacity: 0.9;
+}
+
+.education-experience-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.education-experience-item {
+  background: rgba(15, 23, 42, 0.8);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  border-radius: 20px;
+  padding: 25px;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.education-experience-item::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(96, 165, 250, 0.1), rgba(139, 92, 246, 0.1));
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.education-experience-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(96, 165, 250, 0.3);
+  border-color: rgba(96, 165, 250, 0.6);
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><circle cx="10" cy="10" r="6" fill="none" stroke="%2360a5fa" stroke-width="2"/><circle cx="10" cy="10" r="2" fill="%2360a5fa"/><circle cx="10" cy="10" r="0.5" fill="%23ffffff"/></svg>'), pointer;
+}
+
+.education-experience-item:hover::before {
+  opacity: 1;
+}
+
+.item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.item-header h3 {
+  color: #60a5fa;
+  font-size: 1.4rem;
+  margin: 0;
+  font-weight: 600;
+}
+
+.item-date {
+  color: #fbbf24;
+  font-size: 0.9rem;
+  font-weight: 500;
+  background: rgba(251, 191, 36, 0.1);
+  padding: 4px 12px;
+  border-radius: 15px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+}
+
+.item-content h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0 0 10px 0;
+  font-weight: 500;
+}
+
+.item-content p {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 15px 0;
+  opacity: 0.9;
+}
+
+.item-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.tag {
+  background: rgba(96, 165, 250, 0.2);
+  color: #60a5fa;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  transition: all 0.3s ease;
+}
+
+.tag:hover {
+  background: rgba(96, 165, 250, 0.3);
+  transform: translateY(-2px);
 }
 
 .contact-section {
@@ -953,6 +1102,29 @@ textarea {
   .portfolio-grid {
     grid-template-columns: 1fr;
     gap: 20px;
+  }
+  
+  .education-experience-section .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .education-experience-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .education-experience-item {
+    padding: 20px;
+  }
+  
+  .item-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+  
+  .item-header h3 {
+    font-size: 1.2rem;
   }
   
   .social-icons {
