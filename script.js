@@ -103,4 +103,60 @@ function typeTitle() {
   setTimeout(typeChar, 500);
 }
 
-document.addEventListener('DOMContentLoaded', typeTitle);
+function typeAndAlternateText() {
+  const texts = ["Software Engineer", "Full Stack Developer"];
+  let currentIndex = 0;
+  const element = document.querySelector('.alternating-text');
+  
+  if (!element) return;
+  
+  function typeText(text, callback) {
+    element.textContent = '';
+    let i = 0;
+    
+    function typeChar() {
+      if (i < text.length) {
+        element.textContent += text.charAt(i);
+        i++;
+        setTimeout(typeChar, 100);
+      } else {
+        setTimeout(callback, 2000);
+      }
+    }
+    
+    setTimeout(typeChar, 500);
+  }
+  
+  function deleteText(callback) {
+    let text = element.textContent;
+    let i = text.length;
+    
+    function deleteChar() {
+      if (i > 0) {
+        element.textContent = text.substring(0, i - 1);
+        i--;
+        setTimeout(deleteChar, 50);
+      } else {
+        setTimeout(callback, 500);
+      }
+    }
+    
+    deleteChar();
+  }
+  
+  function cycle() {
+    typeText(texts[currentIndex], () => {
+      deleteText(() => {
+        currentIndex = (currentIndex + 1) % texts.length;
+        cycle();
+      });
+    });
+  }
+  
+  cycle();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  typeTitle();
+  typeAndAlternateText();
+});

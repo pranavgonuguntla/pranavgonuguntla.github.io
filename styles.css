@@ -1014,23 +1014,26 @@ textarea {
   color: #d1d5db;
   font-weight: 400;
   margin: 0;
-  overflow: hidden;
-  border-right: 1px solid #60a5fa;
   white-space: nowrap;
-  animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
   display: inline-block;
-  padding-right: 2px;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-@keyframes typing {
-  from { width: 0; }
-  to { width: 100%; }
+.alternating-text {
+  color: #60a5fa;
+  font-weight: 600;
+  border-right: 2px solid #60a5fa;
+  animation: blink-caret 1s step-end infinite;
 }
 
 @keyframes blink-caret {
   from, to { border-color: transparent; }
   50% { border-color: #60a5fa; }
 }
+
+
+
 
 @media (max-width: 768px) {
   .navbar-container {
